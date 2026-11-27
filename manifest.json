@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Alias de Chamados",
+  "version": "1.0.0",
+  "description": "Substitua atalhos como -bd por mensagens prontas em qualquer site.",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>", "https://qnjizwmxvkkludxcufwy.supabase.co/*"],
+  "action": {
+    "default_title": "Gerenciar aliases",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

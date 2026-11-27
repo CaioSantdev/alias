@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aliases</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <section id="auth-view">
+        <header><div class="logo">A</div><div><h1>Alias de Chamados</h1><p>Entre para sincronizar seus atalhos</p></div></header>
+        <form id="auth-form">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" placeholder="voce@empresa.com" required />
+          <label for="password">Senha</label>
+          <input id="password" type="password" placeholder="Mínimo de 6 caracteres" minlength="6" required />
+          <button id="auth-button" type="submit">Entrar</button>
+        </form>
+        <button id="toggle-auth" class="link-button" type="button">Criar uma conta</button>
+        <p id="auth-status" class="info" role="status">Pronto para entrar.</p>
+      </section>
+
+      <section id="app-view" hidden>
+      <header>
+        <div class="logo">A</div>
+        <div class="header-copy">
+          <h1>Aliases</h1>
+          <p>Mensagens rápidas para chamados</p>
+        </div>
+        <button id="logout-button" class="logout" type="button">Sair</button>
+      </header>
+
+      <form id="alias-form">
+        <label for="shortcut">Atalho</label>
+        <input id="shortcut" type="text" placeholder="-bd" autocomplete="off" required />
+        <label for="message">Mensagem</label>
+        <textarea id="message" rows="3" placeholder="Olá, bom dia..." required></textarea>
+        <div class="form-actions">
+          <button id="save-button" type="submit">Adicionar alias</button>
+          <button id="cancel-button" class="cancel" type="button" hidden>Cancelar edição</button>
+        </div>
+      </form>
+
+      <section>
+        <div class="section-title">
+          <h2>Seus aliases</h2>
+          <span id="count">0</span>
+        </div>
+        <div id="alias-list" class="alias-list"></div>
+      </section>
+      <p id="status" role="status"></p>
+      </section>
+    </main>
+    <script src="config.js"></script>
+    <script src="supabase.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
